@@ -1,13 +1,14 @@
 //React Imports
 import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom'
 
+//Styles
+import './App.css'
+
 //Component Imports
 import Home from './components/Home';
 import Contact from './components/Contact';
 import About from './components/About';
-
-//Styles
-import './App.css'
+import Article from './components/Article';
 
 function App() {
   return (
@@ -32,10 +33,14 @@ function App() {
             <Route path='/about'>
                 <About/>
             </Route>
+          
+            {/* This is a Route Parameter, & it might change */} 
+            <Route path="/articles/:id">
+                <Article/>
+            </Route>
+          
         </Switch>
         
-        
-
       </BrowserRouter>
     </div>
   );
