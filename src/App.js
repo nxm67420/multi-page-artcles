@@ -1,5 +1,5 @@
 //React Imports
-import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, NavLink, Redirect } from 'react-router-dom'
 
 //Styles
 import './App.css'
@@ -37,7 +37,12 @@ function App() {
             {/* This is a Route Parameter, & it might change */} 
             <Route path="/articles/:id">
                 <Article/>
-            </Route>
+          </Route>
+          
+          { /* If Path is ANYTHING, Redirect to "/" Page */}
+          <Route path="*">
+            <Redirect to="/"/>
+          </Route>
           
         </Switch>
         
